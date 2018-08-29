@@ -2,6 +2,4 @@
 
 #include "spike/spike.h"
 
-TEST(SpikeTest, Ctor) {
-    akame::Entity *s = new akame::Entity();
-}
+TEST(SpikeTest, Ctor) { akame::Entity *s = new akame::Entity(); }
