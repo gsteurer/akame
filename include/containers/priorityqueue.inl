@@ -1,5 +1,5 @@
 template <typename T> akame::PriorityQueue<T>::PriorityQueue() {
-  m_capacity = 2;
+  m_capacity = 10;
   m_data = new T[m_capacity];
   m_size = 0;
 }
@@ -17,6 +17,7 @@ template <typename T> void akame::PriorityQueue<T>::Resize() {
   m_data = tmp;
 }
 
+// must preserve m_data[Parent(i)] >= m_data[i]
 template <typename T> void akame::PriorityQueue<T>::MaxHeapify(size_t i) {
   auto l = Left(i);
   auto r = Right(i);
@@ -34,16 +35,16 @@ template <typename T> T akame::PriorityQueue<T>::Pop() {
   }
   T max = m_data[0];
   m_data[0] = m_data[m_size - 1];
-  m_size -= 1;
+  m_size--;
   MaxHeapify(0);
   return max;
 }
 
 template <typename T>
 void akame::PriorityQueue<T>::HeapIncreaseKey(size_t i, T key) {
-  if (key < m_data[i]) {
+  /*if (key < m_data[i]) {
     throw std::runtime_error("The implementation is wrong.");
-  }
+  }*/
   m_data[i] = key;
   while ((i > 0) && (m_data[Parent(i)] < m_data[i])) {
     Swap(i, Parent(i));
@@ -52,9 +53,9 @@ void akame::PriorityQueue<T>::HeapIncreaseKey(size_t i, T key) {
 }
 
 template <typename T> void akame::PriorityQueue<T>::Push(T key) {
-  m_size += 1;
   if (m_size >= m_capacity) {
     Resize();
   }
-  HeapIncreaseKey(m_size, key);
+  m_size++;
+  HeapIncreaseKey(m_size - 1, key);
 }
