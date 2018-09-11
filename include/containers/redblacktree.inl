@@ -239,5 +239,5 @@ inline akame::rbtree::Node<T> *rbTreeSearch(akame::rbtree::Node<T> *x, T k) {
   return x;
 }
 
-}
-}
+} // namespace rbtree
+} // namespace akame

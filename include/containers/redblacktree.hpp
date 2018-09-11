@@ -23,14 +23,17 @@ template <typename T> struct Node {
 
 template <class T> void rbInsert(akame::rbtree::Node<T> **tree, T key);
 
-template <class T> void rbDelete(akame::rbtree::Node<T> **tree, akame::rbtree::Node<T> *z);
+template <class T>
+void rbDelete(akame::rbtree::Node<T> **tree, akame::rbtree::Node<T> *z);
 
-template <class T> akame::rbtree::Node<T> *rbTreeSearch(akame::rbtree::Node<T> *x, T k);
+template <class T>
+akame::rbtree::Node<T> *rbTreeSearch(akame::rbtree::Node<T> *x, T k);
 
-template <class T> akame::rbtree::Node<T> *rbTreeMaximum(akame::rbtree::Node<T> *x);
+template <class T>
+akame::rbtree::Node<T> *rbTreeMaximum(akame::rbtree::Node<T> *x);
 
-template <class T> akame::rbtree::Node<T> *rbTreeMinimum(akame::rbtree::Node<T> *x);
-
+template <class T>
+akame::rbtree::Node<T> *rbTreeMinimum(akame::rbtree::Node<T> *x);
 
 } // namespace rbtree
 } // namespace akame
