@@ -4,13 +4,12 @@
 
 #include "containers/priorityqueue.hpp"
 
-
 void TestMaxHeapProperty(akame::PriorityQueue<int> *q) {
-	for (int idx = q->Size()-1; idx >= 0; idx--) {
-		auto parent = q->At((idx - 1) / 2);
-		auto child = q->At(idx);
-		ASSERT_GE(parent, child);
-	}
+  for (int idx = q->Size() - 1; idx >= 0; idx--) {
+    auto parent = q->At((idx - 1) / 2);
+    auto child = q->At(idx);
+    ASSERT_GE(parent, child);
+  }
 }
 
 // break set -E c++
@@ -72,4 +71,3 @@ TEST(PriorityQueueTest, InsertRemoveRand) {
     }
   }
 }
-

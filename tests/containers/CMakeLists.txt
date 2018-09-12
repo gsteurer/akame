@@ -1,1 +1,1 @@
-subdirs(queue priorityqueue redblacktree linkedlist)
+subdirs(queue priorityqueue redblacktree linkedlist hashmap)

@@ -1,1 +1,1 @@
-subdirs(spike containers)
+subdirs(spike containers utilities)
